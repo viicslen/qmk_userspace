@@ -1,0 +1,8 @@
+VIA_ENABLE         = yes
+ENCODER_MAP_ENABLE = yes
+OLED_ENABLE 	   = no
+BACKLIGHT_DRIVER   = pwm
+RGBLIGHT_ENABLE    = no
+RGB_MATRIX_ENABLE  = yes
+LTO_ENABLE		   = yes
+RAW_ENABLE		   = yes
