@@ -99,8 +99,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     hsv_t hsv = {0, 255, 255};
 
-    if (layer_state_is(layer_state, 2)) {
+    if (layer_state_is(3)) {
         hsv = (hsv_t){130, 255, 255};
+    } else if (layer_state_is(2)) {
+        hsv = (hsv_t){90, 255, 255};
     } else {
         hsv = (hsv_t){30, 255, 255};
     }
@@ -108,6 +110,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (hsv.v > rgb_matrix_get_val()) {
         hsv.v = rgb_matrix_get_val();
     }
+
     rgb_t rgb = hsv_to_rgb(hsv);
 
     for (uint8_t i = led_min; i < led_max; i++) {
@@ -115,5 +118,6 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
         }
     }
+
     return false;
 }
