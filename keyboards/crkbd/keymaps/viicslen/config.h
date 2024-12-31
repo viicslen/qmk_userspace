@@ -69,3 +69,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define SPLIT_LAYER_STATE_ENABLE
+#define TAPPING_TOGGLE 3
